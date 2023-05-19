@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    html,
+    body {
+        width: 100vw;
+        min-height: 100vh;
+        height: max-content;
+        overflow: hidden;
+        @apply text-zinc-950 bg-zinc-100;
+    }
+    
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    
+    h1 {
+        @apply text-8xl
+    }
+    
+    h2 {
+        @apply text-7xl
+    }
+    
+    h3 {
+        @apply text-6xl
+    }
+    
+    h4 {
+        @apply text-5xl
+    }
+    
+    h5 {
+        @apply text-4xl
+    }
+    
+    h6 {
+        @apply text-3xl
+    }
+    
+    p,
+    a,
+    input,
+    textarea {
+        @apply text-lg
+    }
+}
+
+/* @layer components{
+    .button{
+        @apply px-10 py-10 
+    }
+} */

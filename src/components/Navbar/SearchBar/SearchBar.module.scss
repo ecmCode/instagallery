@@ -1,0 +1,12 @@
+.searchBar{
+    @apply rounded-full ring p-1 w-max ring-emerald-800 shadow-inner
+    focus-within:brightness-125 transition duration-300 ease-in-out 
+    ;
+    
+    .input{
+        @apply outline-none px-2 caret-emerald-950 bg-transparent mx-1;
+    }
+    .btn{
+        @apply rounded-full bg-gradient-to-br from-emerald-700 to-green-400 shadow-md px-4 py-2 text-emerald-50 hover:saturate-200 transition duration-300 ease-in-out;
+    }
+}
