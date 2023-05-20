@@ -1,5 +1,5 @@
 import Button from "@/components/Button/Button"
-import SearchBar from "@/components/Navbar/SearchBar/SearchBar"
+import SearchBar from "@/components/SearchBar/SearchBar"
 import getData from "@/utility/getData"
 
 export const getStaticProps = async () => {

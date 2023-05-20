@@ -1,5 +1,5 @@
 import Button from "@/components/Button/Button";
-import SearchBar from "@/components/Navbar/SearchBar/SearchBar";
+import SearchBar from "@/components/SearchBar/SearchBar";
 
 const Elements = () => {
     return (
@@ -12,7 +12,7 @@ const Elements = () => {
             <h5>heading 5 text</h5>
             <h6>heading 6 text</h6>
             <p>paragraphy text</p>
-            <div className="relative flex gap-4 ">
+            <div className="relative flex gap-4 items-baseline">
                 <Button variant="primary" href='/'>
                 primary
                 </Button>
