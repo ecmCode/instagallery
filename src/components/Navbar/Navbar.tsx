@@ -21,9 +21,9 @@ const Navbar = () => {
                     <li key={route.name.toLowerCase()}>
                         <Link 
                         href={route.href}
-                        className={classes( styles.link,
+                        className={classes(styles.link,
                             router.pathname === route.href 
-                            ? "text-emerald-400" : "")}
+                            ? "text-green-400 font-semibold" : "")}
                         >
                             {route.name.toUpperCase()}
                         </Link>
