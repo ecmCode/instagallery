@@ -1,7 +1,9 @@
 import SearchBar from "@/components/SearchBar/SearchBar"
 import getData from "@/utility/getData"
+import { sliceStringByValue } from "@/utility/sliceStringByValue"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { StringDecoder } from "string_decoder"
 
 
 export const getStaticProps = async () => {
@@ -64,7 +66,17 @@ const Home = ({photos}: Props) => {
                           src={photo.url}
                           alt={photo.title} 
                           />
-                          <p>{photo.title}</p>
+                          {/* <p>{photo.title}</p> */}
+                          <p>
+                            {
+                              sliceStringByValue(photo.title, searchInput)
+                              .map(str => (
+                                str === searchInput 
+                                ? <span key={str} className="bg-amber-500 font-semibold">{str}</span> 
+                                : str
+                              ))
+                            }
+                          </p>
                       </li>
                   )
                 })}
