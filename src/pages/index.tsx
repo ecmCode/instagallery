@@ -3,7 +3,6 @@ import getData from "@/utility/getData"
 import { sliceStringByValue } from "@/utility/sliceStringByValue"
 import Image from "next/image"
 import { useEffect, useState } from "react"
-import { StringDecoder } from "string_decoder"
 
 
 export const getStaticProps = async () => {
@@ -29,10 +28,11 @@ const Home = ({photos}: Props) => {
     const [showResult, setShowResult] = useState<boolean>(false)
 
     useEffect(() => {
+        let re = new RegExp(`${searchInput}`, "gi");
         searchInput.length >= 3 ?
           setFilteredGallery(
             photos.filter(photo => (
-                  photo.title.includes(searchInput)
+                  photo.title.match(re)
               ))
           )
         : setFilteredGallery([])
@@ -45,7 +45,6 @@ const Home = ({photos}: Props) => {
             <h1>Instagallery</h1>
             <h3>Search your favorite pics here</h3>
             <SearchBar
-            searchInput={searchInput}
             setSearchInput={setSearchInput}
             setShowResult={setShowResult}
             />
@@ -66,12 +65,11 @@ const Home = ({photos}: Props) => {
                           src={photo.url}
                           alt={photo.title} 
                           />
-                          {/* <p>{photo.title}</p> */}
                           <p>
                             {
                               sliceStringByValue(photo.title, searchInput)
                               .map(str => (
-                                str === searchInput 
+                                str === searchInput
                                 ? <span key={str} className="bg-amber-500 font-semibold">{str}</span> 
                                 : str
                               ))

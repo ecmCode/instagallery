@@ -2,18 +2,17 @@ import React, { useRef, useState } from "react";
 import styles from "./SearchBar.module.scss"
 
 interface Props {
-    searchInput: string
     setSearchInput: React.Dispatch<React.SetStateAction<string>>
     setShowResult: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const SearchBar = ({searchInput, setSearchInput, setShowResult}: Props) => {
+const SearchBar = ({setSearchInput, setShowResult}: Props) => {
 
     const [value, setValue] = useState('')
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setSearchInput(value)
+        setSearchInput(value.toLowerCase())
         setShowResult(true)
     }
 
