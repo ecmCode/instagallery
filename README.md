@@ -10,6 +10,7 @@ This technical documentation provides an overview of the web gallery app develop
     - [Functionality](#functionality)
     - [Installation and Setup](#installation-and-setup)
     - [Dependencies](#dependencies)
+    - [File tree](#file-tree)
 
 ### Files and Components
 
@@ -89,3 +90,41 @@ The web gallery app relies on the following dependencies:
 These dependencies are managed through npm and will be automatically installed when following the installation steps mentioned above.
 
 Additionally, the web gallery app uses the JSONPlaceholder API (https://jsonplaceholder.typicode.com/photos) to fetch the photo data for the gallery.
+
+### File tree
+```
+📦 src
+ ┣ 📂 components
+ ┃ ┣ 📂 Button
+ ┃ ┃ ┣ 📜 Button.tsx
+ ┃ ┃ ┗ ...
+ ┃ ┣ 📂 Navbar
+ ┃ ┃ ┣ 📜 Navbar.tsx
+ ┃ ┃ ┗ ...
+ ┃ ┣ 📂 SearchBar
+ ┃ ┃ ┣ 📜 SearchBar.tsx
+ ┃ ┃ ┗ ...
+ ┃ ┗ ...
+ ┣ 📂 hooks
+ ┃ ┣ 📜 useDebounce.ts
+ ┃ ┗ ...
+ ┣ 📂 pages
+ ┃ ┣ 📂 gallery
+ ┃ ┃ ┣ 📜 index.tsx
+ ┃ ┃ ┗ ...
+ ┃ ┣ 📂 login
+ ┃ ┃ ┣ 📜 index.tsx
+ ┃ ┃ ┗ ...
+ ┃ ┣ 📜 404.tsx
+ ┃ ┗ 📜 index.tsx
+ ┣ 📂 Utilities
+ ┃ ┣ 📜 classes.ts
+ ┃ ┣ 📜 getData.ts
+ ┃ ┗ 📜 sliceStringByValue.ts
+ ┣ 📜 _app.tsx
+ ┣ 📜 _document.tsx
+ ┣ 📜 404.tsx
+ ┣ 📜 global.css
+ ┣ 📜 index.tsx
+ ┗ ...
+```
