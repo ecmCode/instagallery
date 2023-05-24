@@ -10,7 +10,8 @@
         width: 100vw;
         min-height: 100vh;
         height: max-content;
-        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
         @apply text-zinc-950 bg-zinc-100;
     }
     
@@ -46,12 +47,6 @@
     a,
     input,
     textarea {
-        @apply text-lg
+        @apply text-base md:text-lg
     }
 }
-
-/* @layer components{
-    .button{
-        @apply px-10 py-10 
-    }
-} */

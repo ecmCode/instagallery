@@ -1,10 +1,26 @@
+import React, { useRef, useState } from "react";
 import styles from "./SearchBar.module.scss"
 
-const SearchBar = () => {
+interface Props {
+    searchInput: string
+    setSearchInput: React.Dispatch<React.SetStateAction<string>>
+    setShowResult: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const SearchBar = ({searchInput, setSearchInput, setShowResult}: Props) => {
+
+    const [value, setValue] = useState('')
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setSearchInput(value)
+        setShowResult(true)
+    }
+
     return (
-        <form action="submit" onSubmit={(e) => e.preventDefault()}>
+        <form action="submit" onSubmit={e => handleSubmit(e)}>
             <div className={styles.searchBar}>
-                <input type="text" name="" id="" className={styles.input}/>
+                <input type="text" value={value} onChange={e => setValue(e.target.value)} className={styles.input}/>
                 <button type="submit" className={styles.btn}>Search</button>
             </div>
         </form>
