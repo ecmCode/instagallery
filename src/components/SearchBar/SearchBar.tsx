@@ -4,9 +4,10 @@ import styles from "./SearchBar.module.scss"
 interface Props {
     setSearchInput: React.Dispatch<React.SetStateAction<string>>
     setShowResult: React.Dispatch<React.SetStateAction<boolean>>
+    setFilteredGallery: React.Dispatch<React.SetStateAction<IPhoto[]>>
 }
 
-const SearchBar = ({setSearchInput, setShowResult}: Props) => {
+const SearchBar = ({setSearchInput, setShowResult, setFilteredGallery}: Props) => {
 
     const [value, setValue] = useState('')
 
@@ -14,6 +15,7 @@ const SearchBar = ({setSearchInput, setShowResult}: Props) => {
         e.preventDefault()
         setSearchInput(value.toLowerCase())
         setShowResult(true)
+        setFilteredGallery([])
     }
 
     return (
