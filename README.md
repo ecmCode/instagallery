@@ -5,12 +5,12 @@ This technical documentation provides an overview of the web gallery app develop
 ### Table of Contents
 
 - [Web Gallery App Technical Documentation](#web-gallery-app-technical-documentation)
-    - [Table of Contents](#table-of-contents)
-    - [Files and Components](#files-and-components)
-    - [Functionality](#functionality)
-    - [Installation and Setup](#installation-and-setup)
-    - [Dependencies](#dependencies)
-    - [File tree](#file-tree)
+  - [Table of Contents](#table-of-contents)
+  - [Files and Components](#files-and-components)
+  - [Functionality](#functionality)
+  - [Installation and Setup](#installation-and-setup)
+  - [Dependencies](#dependencies)
+  - [File tree](#file-tree)
 
 ### Files and Components
 
@@ -50,7 +50,7 @@ The web gallery app provides the following functionality:
 
 - Photo Title Highlighting: The app highlights the search query matches within the photo titles. It slices the title using the `sliceStringByValue` utility
 
- function and applies CSS styling to the matched substrings.
+function and applies CSS styling to the matched substrings.
 
 - Navigation: The `Navbar` component provides navigation links to different pages of the web gallery app. It highlights the active route based on the current URL.
 
@@ -92,6 +92,7 @@ These dependencies are managed through npm and will be automatically installed w
 Additionally, the web gallery app uses the JSONPlaceholder API (https://jsonplaceholder.typicode.com/photos) to fetch the photo data for the gallery.
 
 ### File tree
+
 ```
 📦 src
  ┣ 📂 components

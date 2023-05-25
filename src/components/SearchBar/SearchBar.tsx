@@ -1,31 +1,41 @@
 import React, { useRef, useState } from "react";
-import styles from "./SearchBar.module.scss"
+import styles from "./SearchBar.module.scss";
 
 interface Props {
-    setSearchInput: React.Dispatch<React.SetStateAction<string>>
-    setShowResult: React.Dispatch<React.SetStateAction<boolean>>
-    setFilteredGallery: React.Dispatch<React.SetStateAction<IPhoto[]>>
+  setSearchInput: React.Dispatch<React.SetStateAction<string>>;
+  setShowResult: React.Dispatch<React.SetStateAction<boolean>>;
+  setFilteredGallery: React.Dispatch<React.SetStateAction<IPhoto[]>>;
 }
 
-const SearchBar = ({setSearchInput, setShowResult, setFilteredGallery}: Props) => {
+const SearchBar = ({
+  setSearchInput,
+  setShowResult,
+  setFilteredGallery,
+}: Props) => {
+  const [value, setValue] = useState("");
 
-    const [value, setValue] = useState('')
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSearchInput(value.toLowerCase());
+    setShowResult(true);
+    setFilteredGallery([]);
+  };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        setSearchInput(value.toLowerCase())
-        setShowResult(true)
-        setFilteredGallery([])
-    }
+  return (
+    <form action="submit" onSubmit={(e) => handleSubmit(e)}>
+      <div className={styles.searchBar}>
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          className={styles.input}
+        />
+        <button type="submit" className={styles.btn}>
+          Search
+        </button>
+      </div>
+    </form>
+  );
+};
 
-    return (
-        <form action="submit" onSubmit={e => handleSubmit(e)}>
-            <div className={styles.searchBar}>
-                <input type="text" value={value} onChange={e => setValue(e.target.value)} className={styles.input}/>
-                <button type="submit" className={styles.btn}>Search</button>
-            </div>
-        </form>
-    );
-}
- 
 export default SearchBar;

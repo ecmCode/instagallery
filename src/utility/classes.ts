@@ -5,6 +5,6 @@
  * @returns The concatenated class names as a string.
  */
 
-export const classes = (...args : string[]) : string => {
-    return args.join(' ')
-}
+export const classes = (...args: string[]): string => {
+  return args.join(" ");
+};

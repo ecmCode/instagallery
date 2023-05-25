@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 /**
  * Debounce / delay returned value for certain ms.
@@ -28,14 +28,13 @@ import { useState, useEffect } from 'react';
 */
 
 export const useDebounce = (value: string, delay: number) => {
-
   const [debouncedValue, setDebouncedValue] = useState(value);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     const timer = setTimeout(() => {
-      setLoading(false)
+      setLoading(false);
       setDebouncedValue(value);
     }, delay);
 
@@ -44,5 +43,5 @@ export const useDebounce = (value: string, delay: number) => {
     };
   }, [value, delay]);
 
-  return {debouncedValue, loading};
+  return { debouncedValue, loading };
 };
