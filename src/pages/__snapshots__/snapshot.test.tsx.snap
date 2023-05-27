@@ -31,7 +31,9 @@ exports[`Home matches the snapshot 1`] = `
       </div>
     </form>
     <div />
-    <div>
+    <div
+      class="w-full justify-center items-center flex flex-col"
+    >
       <p>
         Enter at least 3 characters to get results.
       </p>

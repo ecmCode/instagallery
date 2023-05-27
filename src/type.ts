@@ -1,1 +1,1 @@
-type Button = "primary" | "secondary" | "action" | string;
+type Button = "primary" | "secondary" | "action";

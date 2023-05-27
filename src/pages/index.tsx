@@ -40,7 +40,7 @@ const Home = ({ photos }: Props) => {
         setShowResult={setShowResult}
       />
       <div>{loading && searchInput.length >= 3 && <p>Waiting...</p>}</div>
-      <div>
+      <div className="w-full justify-center items-center flex flex-col">
         {searchInput.length < 3 ? (
           <p>Enter at least 3 characters to get results.</p>
         ) : (
