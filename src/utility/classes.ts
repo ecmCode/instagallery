@@ -6,5 +6,5 @@
  */
 
 export const classes = (...args: string[]): string => {
-  return args.join(" ");
+  return args.filter((arg) => !!arg).join(" ");
 };

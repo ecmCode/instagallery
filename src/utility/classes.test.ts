@@ -1,5 +1,5 @@
-import { classes } from './classes';
-import '@testing-library/jest-dom';
+import { classes } from "./classes";
+import "@testing-library/jest-dom";
 
 /*
   In this test, we cover different scenarios for the classes utility function:
@@ -9,49 +9,49 @@ import '@testing-library/jest-dom';
   Handling dynamic class names passed as variables.
 */
 
-describe('classes', () => {
-  it('should concatenate multiple class names into a single string', () => {
+describe("classes", () => {
+  it("should concatenate multiple class names into a single string", () => {
     // Arrange
-    const classNames = ['btn', 'active', 'custom', ''];
+    const classNames = ["btn", "active", "custom", ""];
 
     // Act
     const result = classes(...classNames);
 
     // Assert
-    expect(result).toEqual('btn active custom');
+    expect(result).toEqual("btn active custom");
   });
 
-  it('should ignore empty or falsy class names', () => {
+  it("should ignore empty or falsy class names", () => {
     // Arrange
-    const classNames : any = ['', null, undefined, 'btn', false, 0];
+    const classNames: any = ["", null, undefined, "btn", false, 0];
 
     // Act
     const result = classes(...classNames);
 
     // Assert
-    expect(result).toEqual('btn');
+    expect(result).toEqual("btn");
   });
 
-  it('should handle conditional class names', () => {
+  it("should handle conditional class names", () => {
     // Arrange
-    const classNames : any = ['btn', true && 'active', false && 'hidden'];
+    const classNames: any = ["btn", true && "active", false && "hidden"];
 
     // Act
     const result = classes(...classNames);
 
     // Assert
-    expect(result).toEqual('btn active');
+    expect(result).toEqual("btn active");
   });
 
-  it('should handle dynamic class names from variables', () => {
+  it("should handle dynamic class names from variables", () => {
     // Arrange
-    const primaryClass = 'primary';
-    const additionalClass = 'extra';
+    const primaryClass = "primary";
+    const additionalClass = "extra";
 
     // Act
     const result = classes(primaryClass, additionalClass);
 
     // Assert
-    expect(result).toEqual('primary extra');
+    expect(result).toEqual("primary extra");
   });
 });
