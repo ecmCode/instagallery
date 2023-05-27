@@ -1,10 +1,10 @@
 import Button from "@/components/Button/Button";
 import SearchBar from "@/components/SearchBar/SearchBar";
+import { SetStateAction } from "react";
 
 const Elements = () => {
   return (
     <div>
-      <SearchBar />
       <h1>heading 1 text</h1>
       <h2>heading 2 text</h2>
       <h3>heading 3 text</h3>

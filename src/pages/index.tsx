@@ -1,8 +1,7 @@
+import GridGallery from "@/components/GridGallery/GridGallery";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import { useDebounce } from "@/hooks/useDebounce";
-import getData from "@/utility/getData";
-import { sliceStringByValue } from "@/utility/sliceStringByValue";
-import Image from "next/image";
+import { getData } from "@/utility/getData";
 import { useEffect, useState } from "react";
 
 export const getStaticProps = async () => {
@@ -39,52 +38,26 @@ const Home = ({ photos }: Props) => {
       <SearchBar
         setSearchInput={setSearchInput}
         setShowResult={setShowResult}
-        setFilteredGallery={setFilteredGallery}
       />
+      <div>{loading && searchInput.length >= 3 && <p>Waiting...</p>}</div>
       <div>
-        {!!filteredGallery.length && <p>Results:</p>}
-
-        {showResult && searchInput.length < 3 && !loading && (
+        {searchInput.length < 3 ? (
           <p>Enter at least 3 characters to get results.</p>
+        ) : (
+          !loading && (
+            <GridGallery
+              searchInput={searchInput}
+              filteredGallery={filteredGallery}
+            />
+          )
         )}
+        {showResult &&
+          !loading &&
+          !filteredGallery.length &&
+          searchInput.length >= 3 && (
+            <p>No result found. Search for something else</p>
+          )}
       </div>
-      {loading ? (
-        showResult && <p>Waiting...</p>
-      ) : filteredGallery?.length ? (
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {filteredGallery
-            ?.slice(0, 12)
-            .sort((a, b) => a.title.localeCompare(b.title))
-            .map((photo) => {
-              return (
-                <li key={photo.id}>
-                  <Image
-                    width={300}
-                    height={300}
-                    src={photo.url}
-                    alt={photo.title}
-                  />
-                  <p>
-                    {sliceStringByValue(photo.title, searchInput).map((str) =>
-                      str === searchInput ? (
-                        <span key={str} className="bg-amber-500 font-semibold">
-                          {str}
-                        </span>
-                      ) : (
-                        str
-                      )
-                    )}
-                  </p>
-                </li>
-              );
-            })}
-        </ul>
-      ) : (
-        showResult &&
-        searchInput.length >= 3 && (
-          <p>No result found. Search for something else</p>
-        )
-      )}
     </div>
   );
 };
