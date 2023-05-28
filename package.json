@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --watch",
-    "prettier": "prettier --write ."
+    "test": "jest --watch --verbose",
+    "prettier": "prettier --write ./src"
   },
   "dependencies": {
     "@types/node": "20.2.0",
