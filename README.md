@@ -5,12 +5,12 @@ This technical documentation provides an overview of the web gallery app develop
 ### Table of Contents
 
 - [Web Gallery App Technical Documentation](#web-gallery-app-technical-documentation)
-  - [Table of Contents](#table-of-contents)
-  - [Files and Components](#files-and-components)
-  - [Functionality](#functionality)
-  - [Installation and Setup](#installation-and-setup)
-  - [Dependencies](#dependencies)
-  - [File tree](#file-tree)
+    - [Table of Contents](#table-of-contents)
+    - [Files and Components](#files-and-components)
+    - [Functionality](#functionality)
+    - [Installation and Setup](#installation-and-setup)
+    - [Dependencies](#dependencies)
+    - [File tree](#file-tree)
 
 ### Files and Components
 
@@ -32,11 +32,11 @@ The code base of the web gallery app consists of several files and components:
 
 8. `components/Button/Button.tsx`: This file contains the `Button` component, which renders a customizable button with different variants (primary, secondary, and action). It uses the `Link` component from Next.js for navigation.
 
-9. `Utilities/classes.ts`: This file contains a utility function `classes` that helps concatenate and format CSS classes for components.
+9. `utility/classes.ts`: This file contains a utility function `classes` that helps concatenate and format CSS classes for components.
 
-10. `Utilities/getData.ts`: This file contains the utility function `getData`, which fetches data from the JSONPlaceholder API. It is used to retrieve the photos for the web gallery app.
+10. `utility/getData.ts`: This file contains the utility function `getData`, which fetches data from the JSONPlaceholder API. It is used to retrieve the photos for the web gallery app.
 
-11. `Utilities/sliceStringByValue.ts`: This file contains the utility function `sliceStringByValue`, which slices a string based on a specific value. It is used to highlight search query matches in photo titles.
+11. `utility/sliceStringByValue.ts`: This file contains the utility function `sliceStringByValue`, which slices a string based on a specific value. It is used to highlight search query matches in photo titles.
 
 ### Functionality
 
@@ -99,6 +99,9 @@ Additionally, the web gallery app uses the JSONPlaceholder API (https://jsonplac
  ┃ ┣ 📂 Button
  ┃ ┃ ┣ 📜 Button.tsx
  ┃ ┃ ┗ ...
+ ┃ ┣ 📂 GrindGallery
+ ┃ ┃ ┣ 📜 GrindGallery.tsx
+ ┃ ┃ ┗ ...
  ┃ ┣ 📂 Navbar
  ┃ ┃ ┣ 📜 Navbar.tsx
  ┃ ┃ ┗ ...
@@ -118,7 +121,7 @@ Additionally, the web gallery app uses the JSONPlaceholder API (https://jsonplac
  ┃ ┃ ┗ ...
  ┃ ┣ 📜 404.tsx
  ┃ ┗ 📜 index.tsx
- ┣ 📂 Utilities
+ ┣ 📂 utility
  ┃ ┣ 📜 classes.ts
  ┃ ┣ 📜 getData.ts
  ┃ ┗ 📜 sliceStringByValue.ts
