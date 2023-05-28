@@ -25,16 +25,17 @@ const Home = ({ photos }: Props) => {
   const { debouncedValue, loading } = useDebounce(searchInput, 1000);
 
   useEffect(() => {
-    let re = new RegExp(`${debouncedValue}`, "gi");
     searchInput.length >= 3
-      ? setFilteredGallery(photos.filter((photo) => photo.title.match(re)))
+      ? setFilteredGallery(
+          photos.filter((photo) => photo.title.includes(debouncedValue))
+        )
       : setFilteredGallery([]);
   }, [debouncedValue, photos, searchInput, searchInput.length]);
 
   return (
-    <div className="flex flex-col gap-10 items-center justify-center m-4">
+    <div className="flex flex-col gap-6 items-center justify-start m-4">
       <h1>Instagallery</h1>
-      <h3>Search your favorite pics here</h3>
+      <h4>Search your favorite pics here</h4>
       <SearchBar
         setSearchInput={setSearchInput}
         setShowResult={setShowResult}
