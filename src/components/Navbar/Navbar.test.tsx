@@ -20,12 +20,10 @@ describe("Navbar", () => {
     const homeLink = screen.getByText("HOME");
     const galleryLink = screen.getByText("GALLERY");
     const loginLink = screen.getByText("LOGIN");
-    const elementsLink = screen.getByText("ELEMENTS");
 
     expect(homeLink).toBeInTheDocument();
     expect(galleryLink).toBeInTheDocument();
     expect(loginLink).toBeInTheDocument();
-    expect(elementsLink).toBeInTheDocument();
   });
 
   it("applies active class to current route link", () => {
@@ -37,6 +35,6 @@ describe("Navbar", () => {
 
     const galleryLink = screen.getByText("GALLERY");
 
-    expect(galleryLink).toHaveClass("text-green-400", "font-semibold");
+    expect(galleryLink).toHaveClass("text-green-600", "font-semibold");
   });
 });

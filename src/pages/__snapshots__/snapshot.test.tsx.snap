@@ -2,35 +2,37 @@
 
 exports[`Home matches the snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="flex flex-col gap-10 items-center justify-center m-4"
-  >
-    <h1>
-      Instagallery
-    </h1>
-    <h3>
-      Search your favorite pics here
-    </h3>
-    <form
-      action="submit"
+  <div>
+    <div
+      class="flex flex-col gap-10 items-center justify-start"
     >
-      <div
-        class="searchBar"
+      <h1>
+        Instagallery
+      </h1>
+      <h4>
+        Search your favorite pics here
+      </h4>
+      <form
+        action="submit"
       >
-        <input
-          class="input"
-          type="text"
-          value=""
-        />
-        <button
-          class="btn"
-          type="submit"
+        <div
+          class="searchBar"
         >
-          Search
-        </button>
-      </div>
-    </form>
-    <div />
+          <input
+            class="input"
+            type="text"
+            value=""
+          />
+          <button
+            class="btn"
+            type="submit"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+      <div />
+    </div>
     <div
       class="w-full justify-center items-center flex flex-col"
     >

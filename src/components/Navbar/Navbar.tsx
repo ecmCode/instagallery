@@ -8,7 +8,6 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Gallery", href: "/gallery" },
     { name: "Login", href: "/login" },
-    { name: "Elements", href: "/elements" },
   ];
 
   const router = useRouter();
@@ -23,7 +22,7 @@ const Navbar = () => {
               className={classes(
                 styles.link,
                 router.pathname === route.href
-                  ? "text-green-400 font-semibold"
+                  ? "text-green-600 font-semibold"
                   : ""
               )}
             >
