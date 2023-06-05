@@ -12,7 +12,7 @@ const GridGallery = ({ searchInput, filteredGallery }: Props) => {
   return (
     <div>
       {!!filteredGallery.length && (
-        <p className="my-4">
+        <p className="m-4">
           Results:{" "}
           {filteredGallery.length > maxLength ? "12+" : filteredGallery.length}
           {filteredGallery.length > maxLength && (
@@ -25,7 +25,7 @@ const GridGallery = ({ searchInput, filteredGallery }: Props) => {
           )}
         </p>
       )}
-      <ul className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <ul className="grid grid-cols-2 md:grid-cols-4 gap-4 m-4">
         {filteredGallery
           ?.slice(0, maxLength)
           .sort((a, b) => a.title.localeCompare(b.title))
