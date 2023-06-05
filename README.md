@@ -5,12 +5,12 @@ This technical documentation provides an overview of the web gallery app develop
 ### Table of Contents
 
 - [Web Gallery App Technical Documentation](#web-gallery-app-technical-documentation)
-    - [Table of Contents](#table-of-contents)
-    - [Files and Components](#files-and-components)
-    - [Functionality](#functionality)
-    - [Installation and Setup](#installation-and-setup)
-    - [Dependencies](#dependencies)
-    - [File tree](#file-tree)
+  - [Table of Contents](#table-of-contents)
+  - [Files and Components](#files-and-components)
+  - [Functionality](#functionality)
+  - [Installation and Setup](#installation-and-setup)
+  - [Dependencies](#dependencies)
+  - [File tree](#file-tree)
 
 ### Files and Components
 
